@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>My Flask App</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+		<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+	</head>
+<body>
+    <div class="result-container">
+        <h2>Based on the input variables, the likelihood of having heart disease is :</h2>
+        {% if prediction == 1 %}
+            <p class="result-text result-true">High</p>
+        {% else %}
+            <p class="result-text result-false">Low</p>
+        {% endif %}
+        <p class="disclaimer">Disclaimer: This model has an 85.25% accuracy, please still seek out a medical professional.</p>
+    </div>
+</body>
+</html>

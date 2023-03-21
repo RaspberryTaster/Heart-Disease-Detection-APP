@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Disease Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="container">
+        <h1>Heart Disease Predictor</h1>
+        <p>Answer a few questions to see if you might be at risk for heart disease.</p>
+        <form action="/predict" method="post">
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" required min="0">
+            </div>
+            <div class="form-group">
+                <label for="sex">Sex:</label>
+                <select id="sex" name="sex" required>
+                    <option value="0">Female</option>
+                    <option value="1">Male</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="chest_pain_type">Chest Pain Type:</label>
+                <select id="chest_pain_type" name="chest_pain_type" required>
+                    <option value="0">Typical Angina</option>
+                    <option value="1">Atypical Angina</option>
+                    <option value="2">Non-Anginal Pain</option>
+                    <option value="3">Asymptomatic</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="resting_bp">Resting Blood Pressure:</label>
+                <input type="number" id="resting_bp" name="resting_bp" required min="0">
+            </div>
+            <div class="form-group">
+                <label for="cholesterol">Cholesterol:</label>
+                <input type="number" id="cholesterol" name="cholesterol" required min="0">
+            </div>
+            <div class="form-group">
+                <label for="fasting_bs">Fasting Blood Sugar:</label>
+                <select id="fasting_bs" name="fasting_bs" required>
+                    <option value="0">Less Than 120mg/dl</option>
+                    <option value="1">Greater Than 120mg/dl</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="max_heart_rate">Maximum Heart Rate:</label>
+                <input type="number" id="max_heart_rate" name="max_heart_rate" required min="0">
+            </div>
+            <div class="form-group">
+                <label for="st_slope">ST Slope:</label>
+                <select id="st_slope" name="st_slope" required>
+                    <option value="0">Upsloping</option>
+                    <option value="1">Flat</option>
+                    <option value="2">Downsloping</option>
+                </select>
+            </div>
+            <button type="submit" class="submit-button">Predict</button>
+        </form>
+    </div>
+</body>
+</html>
