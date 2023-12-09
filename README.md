@@ -1,6 +1,4 @@
 # Heart Disease Prediction App
-
-## Introduction
 This Flask-based web application predicts heart disease using clinical data. Users can input health-related parameters, and the app provides a prediction based on a machine learning model.
 
 ## Pages
