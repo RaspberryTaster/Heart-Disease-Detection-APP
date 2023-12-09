@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request
+
 import numpy as np 
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -14,17 +15,8 @@ from sklearn.preprocessing import MinMaxScaler
 # For Model Building
 from joblib import dump
 from joblib import load
-from sklearn.linear_model import LogisticRegression
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.svm import SVC
 from xgboost import XGBClassifier
-from sklearn.model_selection import GridSearchCV
-from sklearn.metrics import classification_report
-
 # For Model Evaluation
-from sklearn.metrics import confusion_matrix
-from sklearn.metrics import plot_roc_curve, auc
-from sklearn.model_selection import learning_curve
 
 import warnings
 warnings.filterwarnings("ignore")
@@ -33,6 +25,7 @@ app = Flask(__name__)
 
 # Load the trained model
 model = load('models/heart_disease_model.joblib')
+
 
 @app.route('/')
 def home():
